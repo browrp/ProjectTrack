@@ -5,6 +5,7 @@ class ProjectOverviewController < ApplicationController
 
     proj_a = Project.new
     proj_a.uuid_key ="afde-90-zxy"
+    proj_a.project_name = "The X Files"
     proj_a.project_sponsors = Array.new
 
     b = ProjectSponsor.new
@@ -24,6 +25,7 @@ class ProjectOverviewController < ApplicationController
 
     proj_b = Project.new
     proj_b.uuid_key ="bkij-11-bb"
+    proj_b.project_name = "Sleepy Hollow"
     proj_b.project_sponsors = Array.new
 
     h = ProjectSponsor.new
