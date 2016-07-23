@@ -3,6 +3,9 @@ class ProjectOverviewController < ApplicationController
     @x = Array.new
 
 
+    logger.info "Data Beginning"
+
+
     proj_a = Project.new
     proj_a.uuid_key ="afde-90-zxy"
     proj_a.project_name = "The X Files"
@@ -43,12 +46,45 @@ class ProjectOverviewController < ApplicationController
 
     @x.push proj_b
 
-    #Temporary rendering
+
+
+
+    # #Temporary rendering
+    # render :status => 200,
+    #        :json => { :success => true,
+    #                   :info => "Project Sponsor Overview",
+    #                   :data => { :project_list => ActiveModel::ArraySerializer.new([], each_serializer: ProjectSerializer)}}
+
+    # render :status => 200,
+    #        :json => { :success => true,
+    #                   :info => "Project Sponsor Overview",
+    #                   :data => { :project_list => ActiveModel::SerializableResource.new(@x.to_a)}}
+
+    # render :status => 200,
+    #        :json => { :success => true,
+    #                   :info => "Project Sponsor Overview",
+    #                   :data => { :project_list => ActiveModel::SerializableResource.new(@x)}}
+
+    #Usint an array isn't working
     render :status => 200,
            :json => { :success => true,
                       :info => "Project Sponsor Overview",
                       :data => { :project_list => @x}}
 
+
+    # render :status => 200,
+    #        :json => { :success => true,
+    #                   :info => "Project Sponsor Overview",
+    #                   :data => { :project_list => proj_b}}
+
+    # render :status => 200,
+    #        :json => { :success => true,
+    #                   :info => "Project Sponsor Overview",
+    #                   :data => { :project_list => []}}
+
+
+
+    #ActiveModel::SerializableResource.new
     return
 
 
