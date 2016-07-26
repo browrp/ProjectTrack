@@ -2,10 +2,6 @@ class ProjectOverviewController < ApplicationController
   def index
     @x = Array.new
 
-
-    logger.info "Data Beginning"
-
-
     proj_a = Project.new
     proj_a.uuid_key ="afde-90-zxy"
     proj_a.project_name = "The X Files"
